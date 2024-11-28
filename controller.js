@@ -1,19 +1,19 @@
 const { resolveDNS } = require('./model');
 
 const dnsLookup = async (req, res) => {
-  try {
-    const { domain } = req.body;
-
-    if (!domain) {
-      return res.status(400).json({ error: 'Domain is required' });
+    try {
+      const { input } = req.body; 
+  
+      if (!input) {
+        return res.status(400).json({ error: 'Domain is required' });
+      }
+  
+      const result = await resolveDNS(input); 
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to resolve DNS', details: error.message });
     }
-
-    const result = await resolveDNS(domain);
-    res.json(result);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to resolve DNS', details: error.message });
-  }
-};
+  };
 
 const getDocs = async (req, res) => {
   const docs = {
