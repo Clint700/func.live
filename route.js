@@ -1,9 +1,9 @@
 const express = require('express');
-const { base64Encode, getDocs } = require('./controller');
+const { dnsLookup, getDocs } = require('./controller');
 
 const router = express.Router();
 
-router.post('/base64EncodeCustom', base64Encode);
-router.get('/base64EncodeCustom', getDocs); 
+router.post('/dnsLookup', dnsLookup); 
+router.get('/dnsLookup', getDocs);   
 
 module.exports = router;
