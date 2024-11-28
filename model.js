@@ -1,16 +1,16 @@
 const dns = require('dns');
 
-const resolveDNS = (domain) => {
+const resolveDNS = (input) => {
   return new Promise((resolve, reject) => {
-    if (!domain) {
-      reject(new Error('Domain is required'));
+    if (!input) {
+      reject(new Error('Input is required'));
     }
 
-    dns.lookup(domain, (err, address, family) => {
+    dns.lookup(input, (err, address, family) => {
       if (err) {
         reject(err);
       } else {
-        resolve({ domain, address, family });
+        resolve({ address, family });
       }
     });
   });
