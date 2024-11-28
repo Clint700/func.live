@@ -18,7 +18,7 @@ Prerequisites
 
 Steps
 
-Clone the repository: git clone <repository-url>
+Clone the repository: git clone <https://github.com/Clint700/func.live.git>
 cd func_live
 Install dependencies: npm install
 Start the server: node app.js ==> The server will run at: http://localhost:3000
@@ -60,3 +60,5 @@ Endpoints
 Testing
 
 This project uses Jest for unit testing. To run the tests: npm test
+
+Render url: <https://func-live.onrender.com>
